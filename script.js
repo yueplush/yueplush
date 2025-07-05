@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const fadeInElements = document.querySelectorAll('.fade-in');
     const agreeCheckbox = document.getElementById('agree');
     const aliasButtons = document.querySelectorAll('.alias-button');
-    const suggestiveArtistButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
+    const myArtPortfolioButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
     const virtualNatureCareButton = document.querySelector('.alias-button[data-alias="virtual-nature-care"]');
-    const suggestiveArtistContent = document.getElementById('suggestive-artist-content');
+    const myArtPortfolioContent = document.getElementById('suggestive-artist-content');
     const virtualNatureCareContent = document.getElementById('virtual-nature-care-content');
 
     const observer = new IntersectionObserver(entries => {
@@ -25,26 +25,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if terms were already agreed upon in the session
     if (sessionStorage.getItem('termsAgreed') === 'true') {
         agreeCheckbox.checked = true;
-        enableSuggestiveArtistButton();
+        enableMyArtPortfolioButton();
     }
 
     agreeCheckbox.addEventListener('change', function() {
         if (this.checked) {
             sessionStorage.setItem('termsAgreed', 'true');
-            enableSuggestiveArtistButton();
+            enableMyArtPortfolioButton();
         } else {
             sessionStorage.setItem('termsAgreed', 'false');
-            disableSuggestiveArtistButton();
+            disableMyArtPortfolioButton();
         }
     });
 
-    suggestiveArtistButton.addEventListener('click', function(event) {
+    myArtPortfolioButton.addEventListener('click', function(event) {
         if (!agreeCheckbox.checked) {
             event.preventDefault(); // Prevent default link behavior
             alert('Please agree to the Terms of Service to access this content.');
         } else {
-            suggestiveArtistContent.classList.remove('hidden');
-            suggestiveArtistContent.scrollIntoView({ behavior: 'smooth' });
+            myArtPortfolioContent.classList.remove('hidden');
+            myArtPortfolioContent.scrollIntoView({ behavior: 'smooth' });
         }
     });
 
@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
         virtualNatureCareContent.scrollIntoView({ behavior: 'smooth' });
     });
 
-    function enableSuggestiveArtistButton() {
-        suggestiveArtistButton.disabled = false;
+    function enableMyArtPortfolioButton() {
+        myArtPortfolioButton.disabled = false;
     }
 
-    function disableSuggestiveArtistButton() {
-        suggestiveArtistButton.disabled = true;
-        suggestiveArtistContent.classList.add('hidden'); // Hide content if terms are unchecked
+    function disableMyArtPortfolioButton() {
+        myArtPortfolioButton.disabled = true;
+        myArtPortfolioContent.classList.add('hidden'); // Hide content if terms are unchecked
     }
 });
