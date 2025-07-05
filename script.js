@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const virtualNatureCareButton = document.querySelector('.alias-button[data-alias="virtual-nature-care"]');
     const virtualNatureCareContent = document.getElementById('virtual-nature-care-content');
 
-    // Get all content sections that can be toggled
-    const toggleableContentSections = [virtualNatureCareContent]; // Add other sections here as they are implemented
-
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -49,20 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     virtualNatureCareButton.addEventListener('click', function() {
-        // Hide all other toggleable content sections
-        toggleableContentSections.forEach(section => {
-            if (section !== virtualNatureCareContent) {
-                section.classList.add('hidden');
-            }
-        });
-
-        // Toggle visibility of the Virtual Nature Care content
-        virtualNatureCareContent.classList.toggle('hidden');
-
-        // Scroll into view if it's now visible
-        if (!virtualNatureCareContent.classList.contains('hidden')) {
-            virtualNatureCareContent.scrollIntoView({ behavior: 'smooth' });
-        }
+        virtualNatureCareContent.classList.remove('hidden');
+        virtualNatureCareContent.scrollIntoView({ behavior: 'smooth' });
     });
 
     function enableMyArtPortfolioButton() {
