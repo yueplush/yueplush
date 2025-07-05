@@ -23,6 +23,7 @@ header {
     text-align: center;
     border-bottom: #0779e4 3px solid;
     overflow: hidden; /* Ensure image doesn't overflow */
+    position: relative; /* For positioning text over image */
 }
 
 .header-img {
@@ -33,16 +34,35 @@ header {
     max-height: 200px; /* Limit header image height */
 }
 
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
 header h1 {
-    margin: 1rem 0 0.5rem; /* Adjusted margin */
+    margin: 0;
     font-size: 2.5rem;
     animation: slide-down 1s ease-out;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparent black background */
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 header p {
     font-size: 1.2rem;
     animation: slide-up 1s ease-out;
-    margin-bottom: 1rem; /* Adjusted margin */
+    margin-top: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparent black background */
+    padding: 0.3rem 0.8rem;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 /* Main Content */
@@ -221,6 +241,35 @@ footer {
 /* Hidden content sections */
 .hidden {
     display: none;
+}
+
+/* Full Terms of Service Section */
+#full-terms-details {
+    background-color: #ffffff; /* White background */
+    padding: 30px; /* Generous padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 40px; /* Space from previous section */
+    margin-bottom: 40px; /* Space from footer */
+}
+
+#full-terms-details h2 {
+    color: #0779e4; /* Blue heading */
+    margin-bottom: 20px;
+}
+
+#full-terms-details p {
+    color: #444; /* Darker text for readability */
+    margin-bottom: 15px;
+}
+
+#full-terms-details a {
+    color: #0779e4;
+    text-decoration: none;
+}
+
+#full-terms-details a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Design */
