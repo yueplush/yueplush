@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const fadeInElements = document.querySelectorAll('.fade-in');
     const agreeCheckbox = document.getElementById('agree');
     const aliasButtons = document.querySelectorAll('.alias-button');
-    const suggestiveArtistButton = document.querySelector('.alias-button[data-link="#artist"]');
+    const suggestiveArtistButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
+    const virtualNatureCareButton = document.querySelector('.alias-button[data-alias="virtual-nature-care"]');
+    const suggestiveArtistContent = document.getElementById('suggestive-artist-content');
+    const virtualNatureCareContent = document.getElementById('virtual-nature-care-content');
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -40,8 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Prevent default link behavior
             alert('Please agree to the Terms of Service to access this content.');
         } else {
-            window.location.href = 'suggestive-artist.html';
+            suggestiveArtistContent.classList.remove('hidden');
+            suggestiveArtistContent.scrollIntoView({ behavior: 'smooth' });
         }
+    });
+
+    virtualNatureCareButton.addEventListener('click', function() {
+        virtualNatureCareContent.classList.remove('hidden');
+        virtualNatureCareContent.scrollIntoView({ behavior: 'smooth' });
     });
 
     function enableSuggestiveArtistButton() {
@@ -50,5 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function disableSuggestiveArtistButton() {
         suggestiveArtistButton.disabled = true;
+        suggestiveArtistContent.classList.add('hidden'); // Hide content if terms are unchecked
     }
 });
