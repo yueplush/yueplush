@@ -19,13 +19,22 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 2rem 0;
+    padding: 0; /* Removed padding to let image control height */
     text-align: center;
     border-bottom: #0779e4 3px solid;
+    overflow: hidden; /* Ensure image doesn't overflow */
+}
+
+.header-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    max-height: 200px; /* Limit header image height */
 }
 
 header h1 {
-    margin: 0;
+    margin: 1rem 0 0.5rem; /* Adjusted margin */
     font-size: 2.5rem;
     animation: slide-down 1s ease-out;
 }
@@ -33,6 +42,7 @@ header h1 {
 header p {
     font-size: 1.2rem;
     animation: slide-up 1s ease-out;
+    margin-bottom: 1rem; /* Adjusted margin */
 }
 
 /* Main Content */
@@ -212,8 +222,6 @@ footer {
 .hidden {
     display: none;
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
