@@ -55,14 +55,22 @@ header h1 {
     border-radius: 5px;
 }
 
-header p {
+/* Tagline Section */
+.tagline-section {
+    background-color: #f4f4f4; /* Match body background */
+    padding: 1rem 0; /* Padding for the section */
+    text-align: center; /* Center the container within the section */
+}
+
+.tagline-section p {
     font-size: 1.2rem;
     animation: slide-up 1s ease-out;
-    margin-top: 0.5rem;
     background-color: rgba(0, 0, 0, 0.4); /* Transparent black background */
+    color: #fff; /* White text */
     padding: 0.3rem 0.8rem;
     display: inline-block;
     border-radius: 5px;
+    margin: 0 auto; /* Center the paragraph within its container */
 }
 
 /* Main Content */
