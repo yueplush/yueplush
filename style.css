@@ -261,34 +261,7 @@ footer {
     display: none;
 }
 
-/* Full Terms of Service Section */
-#full-terms-details {
-    background-color: #ffffff; /* White background */
-    padding: 30px; /* Generous padding */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-top: 40px; /* Space from previous section */
-    margin-bottom: 40px; /* Space from footer */
-}
 
-#full-terms-details h2 {
-    color: #0779e4; /* Blue heading */
-    margin-bottom: 20px;
-}
-
-#full-terms-details p {
-    color: #444; /* Darker text for readability */
-    margin-bottom: 15px;
-}
-
-#full-terms-details a {
-    color: #0779e4;
-    text-decoration: none;
-}
-
-#full-terms-details a:hover {
-    text-decoration: underline;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
