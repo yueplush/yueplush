@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const fadeInElements = document.querySelectorAll('.fade-in');
     const agreeCheckbox = document.getElementById('agree');
-    const aliasButtons = document.querySelectorAll('.alias-button');
     const myArtPortfolioButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
     const virtualNatureCareButton = document.querySelector('.alias-button[data-alias="virtual-nature-care"]');
-    const myArtPortfolioContent = document.getElementById('suggestive-artist-content');
     const virtualNatureCareContent = document.getElementById('virtual-nature-care-content');
 
     const observer = new IntersectionObserver(entries => {
@@ -43,8 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Prevent default link behavior
             alert('Please agree to the Terms of Service to access this content.');
         } else {
-            myArtPortfolioContent.classList.remove('hidden');
-            myArtPortfolioContent.scrollIntoView({ behavior: 'smooth' });
+            window.open('https://yueplushart.carrd.co/', '_blank'); // Open Carrd link in new tab
         }
     });
 
@@ -59,6 +56,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function disableMyArtPortfolioButton() {
         myArtPortfolioButton.disabled = true;
-        myArtPortfolioContent.classList.add('hidden'); // Hide content if terms are unchecked
     }
 });
