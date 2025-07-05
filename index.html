@@ -3,57 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プロフィール - [あなたの名前]</title>
+    <title>YuePlush Portal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="fade-in">
-        <h1>[あなたの名前]</h1>
-        <p>[あなたのキャッチコピーや職業]</p>
+        <h1>YuePlush Portal</h1>
+        <p>Your gateway to various activities</p>
     </header>
 
     <main>
-        <section id="profile" class="fade-in">
-            <h2>プロフィール</h2>
-            <img src="profile.jpg" alt="プロフィール写真" class="profile-img">
-            <p>
-                ここに自己紹介文を記述します。あなたの経歴、スキル、趣味など、自由に表現してください。
-                テキストを更新して、あなただけの魅力的なプロフィールを作成しましょう。
-            </p>
+        <section id="intro" class="fade-in">
+            <h2>Activity Categories</h2>
+            <p>Here, we introduce the diverse activities of YuePlush. Click the buttons below to proceed to each alias's detailed page.</p>
         </section>
 
-        <section id="works" class="fade-in">
-            <h2>作品</h2>
-            <div class="works-grid">
-                <div class="work-item">
-                    <img src="work1.jpg" alt="作品1">
-                    <h3>作品タイトル1</h3>
-                    <p>作品の説明を簡潔に記述します。</p>
-                </div>
-                <div class="work-item">
-                    <img src="work2.jpg" alt="作品2">
-                    <h3>作品タイトル2</h3>
-                    <p>作品の説明を簡潔に記述します。</p>
-                </div>
-                <div class="work-item">
-                    <img src="work3.jpg" alt="作品3">
-                    <h3>作品タイトル3</h3>
-                    <p>作品の説明を簡潔に記述します。</p>
+        <section id="aliases" class="fade-in">
+            <h2>Aliases</h2>
+            <div class="alias-buttons">
+                <button class="alias-button" data-link="#artist" disabled>Suggestive Artist</button>
+                <button class="alias-button" data-link="#asmr" disabled>風景ASMR名義</button>
+                <button class="alias-button" data-link="#sfx" disabled>効果音Lab名義</button>
+            </div>
+        </section>
+
+        <section id="terms" class="fade-in">
+            <h2>Terms of Service</h2>
+            <div class="terms-content">
+                <p>Before using this site and the content of each alias, please review the following terms of service.</p>
+                <p>(Here, you can describe the summary of the detailed terms of service, or provide a link to the terms page. E.g., <a href="#full-terms">Click here for full terms</a>)</p>
+                <div class="agreement-checkbox">
+                    <input type="checkbox" id="agree" />
+                    <label for="agree">I agree to the Terms of Service</label>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="fade-in">
-        <h2>SNSリンク</h2>
-        <div class="social-links">
-            <a href="https://twitter.com/your_username" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/your_username" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/your_username" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/your_username" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p>&copy; 2025 [あなたの名前]</p>
+        <p>&copy; 2025 YuePlush</p>
     </footer>
 
     <script src="script.js"></script>
