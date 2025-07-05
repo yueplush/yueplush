@@ -95,7 +95,22 @@ section h2 {
 
 /* Profile */
 #profile {
-    text-align: center;
+    background-color: #ffffff; /* White background */
+    padding: 30px; /* Generous padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 40px; /* Space from previous section */
+    text-align: left; /* Align content to the left within the box */
+}
+
+#profile h2 {
+    text-align: left; /* Override center alignment for h2 */
+    margin-bottom: 10px;
+}
+
+#profile p {
+    text-align: left; /* Override center alignment for p */
+    margin-bottom: 10px;
 }
 
 .profile-img {
@@ -105,6 +120,8 @@ section h2 {
     object-fit: cover;
     border: 3px solid #ddd;
     transition: transform 0.3s ease;
+    display: block; /* Make it a block element to center with margin auto */
+    margin: 0 auto 20px auto; /* Center the image and add bottom margin */
 }
 
 .profile-img:hover {
