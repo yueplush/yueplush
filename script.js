@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const agreeCheckbox = document.getElementById('agree');
     const myArtPortfolioButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
     const virtualNatureCareButton = document.querySelector('.alias-button[data-alias="virtual-nature-care"]');
-    const virtualNatureCareContent = document.getElementById('virtual-nature-care-content');
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -46,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     virtualNatureCareButton.addEventListener('click', function() {
-        virtualNatureCareContent.classList.remove('hidden');
-        virtualNatureCareContent.scrollIntoView({ behavior: 'smooth' });
+        window.open('http://virtualnaturecare.carrd.co/', '_blank'); // Open Carrd link in new tab
     });
 
     function enableMyArtPortfolioButton() {
