@@ -168,7 +168,13 @@ footer {
     }
 }
 
-/* Alias Buttons */
+#aliases {
+    background-color: #ffffff; /* White background */
+    padding: 30px; /* Generous padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 40px; /* Space from previous section */
+}
 .alias-buttons {
     display: flex;
     justify-content: center;
