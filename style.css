@@ -4,7 +4,8 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #000000, #ffffff); /* Changed to gradient */
+    min-height: 100vh; /* Ensure gradient covers full height */
     color: #333;
 }
 
