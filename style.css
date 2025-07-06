@@ -186,6 +186,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     white-space: nowrap;
+    text-decoration: none; /* Add this line */
 }
 
 .alias-button:hover:not(:disabled) {
