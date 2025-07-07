@@ -269,6 +269,31 @@ footer {
     display: none;
 }
 
+#toggle-profile {
+    background-color: #0779e4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#toggle-profile:hover {
+    background-color: #0561b9;
+}
+
+#profile-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+#profile-details.show {
+    max-height: 500px; /* Adjust as needed */
+}
+
 
 
 /* Responsive Design */

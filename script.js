@@ -55,4 +55,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function disableMyArtPortfolioButton() {
         myArtPortfolioButton.disabled = true;
     }
+
+    const toggleProfileButton = document.getElementById('toggle-profile');
+    const profileDetails = document.getElementById('profile-details');
+
+    toggleProfileButton.addEventListener('click', function() {
+        const isHidden = profileDetails.classList.contains('hidden');
+        if (isHidden) {
+            profileDetails.classList.remove('hidden');
+            profileDetails.classList.add('show');
+            toggleProfileButton.textContent = 'Hide Profile';
+        } else {
+            profileDetails.classList.remove('show');
+            // Delay hiding to allow for transition
+            setTimeout(() => {
+                profileDetails.classList.add('hidden');
+            }, 500); // Match transition duration
+            toggleProfileButton.textContent = 'Show Profile';
+        }
+    });
 });
