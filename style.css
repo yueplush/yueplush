@@ -139,7 +139,7 @@ section h2 {
 /* Mail icon styling and pulse animation */
 .mail-icon-container {
     display: block; /* Changed to block to allow centering of the image within it */
-    text-align: center; /* To center the image */
+    text-align: left; /* To left-align the image */
     margin-top: 20px; /* Add some space above it */
 }
 
