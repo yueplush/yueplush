@@ -136,16 +136,24 @@ section h2 {
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
 }
 
-/* Mail icon pulse animation */
+/* Mail icon styling and pulse animation */
 .mail-icon-container {
-    display: inline-block;
+    display: block; /* Changed to block to allow centering of the image within it */
+    text-align: center; /* To center the image */
+    margin-top: 20px; /* Add some space above it */
 }
 
-.mail-icon-container img {
-    transition: transform 0.3s ease;
+.mail-icon {
+    width: 50px; /* Smaller size */
+    height: auto;
+    border: 2px solid white; /* White border */
+    padding: 5px; /* Padding inside the border */
+    box-sizing: content-box; /* Ensure padding and border are added to the width/height */
+    display: inline-block; /* To allow text-align: center on parent */
+    transition: transform 0.3s ease; /* Keep the transition for pulse */
 }
 
-.mail-icon-container:hover img {
+.mail-icon-container:hover .mail-icon { /* Target the image with the new class */
     animation: pulse 1s infinite;
 }
 
