@@ -145,23 +145,19 @@ section h2 {
 
 /* Mail icon styling and pulse animation */
 .mail-icon-container {
-    display: block; /* Changed to block to allow centering of the image within it */
-    text-align: left; /* To left-align the image */
-    margin-top: 20px; /* Add some space above it */
+    display: block;
+    text-align: left;
+    margin-top: 20px;
 }
 
-.mail-icon {
-    width: 50px; /* Smaller size */
-    height: auto;
-    border: 2px solid white; /* White border */
-    padding: 5px; /* Padding inside the border */
-    background-color: white; /* White background for transparent GIF */
-    box-sizing: content-box; /* Ensure padding and border are added to the width/height */
-    display: inline-block; /* To allow text-align: center on parent */
-    transition: transform 0.3s ease; /* Keep the transition for pulse */
+.mail-emoji {
+    font-size: 3rem; /* Adjust size as needed */
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
-.mail-icon-container:hover .mail-icon { /* Target the image with the new class */
+.mail-icon-container:hover .mail-emoji {
     animation: pulse 1s infinite;
 }
 
