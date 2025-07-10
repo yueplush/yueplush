@@ -95,4 +95,23 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleProfileButton.textContent = 'Show Profile';
         }
     });
+
+    // Hamburger menu functionality
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const mainNav = document.getElementById('main-nav');
+
+    if (hamburgerMenu && mainNav) {
+        hamburgerMenu.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+
+        // Close menu when a nav link is clicked (for mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+    }
 });

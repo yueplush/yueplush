@@ -83,9 +83,23 @@ header h1 {
     text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #00e5ff;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000; /* Ensure it's above other content */
+}
+
 /* Navigation Menu */
 nav {
     margin-top: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 nav ul {
@@ -375,28 +389,53 @@ section h2 {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content {
-        position: static; /* Remove absolute positioning */
-        transform: none; /* Remove transform */
-        flex-direction: column; /* Stack items vertically */
-        text-align: center; /* Center align content */
-        padding: 1rem; /* Adjust padding */
+        position: relative; /* Change to relative for hamburger positioning */
+        flex-direction: row; /* Keep row for h1 and hamburger */
+        justify-content: space-between; /* Space between h1 and hamburger */
+        align-items: center;
+        padding: 1rem;
     }
 
     header h1 {
         font-size: 2rem;
-        width: 100%; /* Take full width */
-        margin-bottom: 10px; /* Add some space below h1 */
+        width: auto; /* Adjust width */
+        margin-bottom: 0; /* Remove margin */
     }
 
     nav {
-        margin-top: 10px; /* Adjust margin for nav */
-        width: 100%; /* Take full width */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Darker background for menu */
+        flex-direction: column;
+        display: none; /* Hidden by default */
+        padding: 1rem 0;
+        border-top: 1px solid #00e5ff;
+    }
+
+    nav.active {
+        display: flex; /* Show when active */
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul {
         flex-direction: column;
         gap: 10px;
-        padding: 0.5rem; /* Adjust padding for ul */
+        padding: 0; /* Remove padding */
+        width: auto; /* Adjust width */
+        background-color: transparent; /* Remove background */
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 0;
     }
 
     header p {
