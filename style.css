@@ -39,22 +39,9 @@ body {
     text-align: center;
     border-bottom: #00e5ff 3px solid;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align items to the right */
     align-items: center;
     position: relative;
-}
-
-.site-title {
-    margin: 0;
-    font-size: 3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 0.5rem 1.5rem;
-    display: inline-block;
-    border-radius: 5px;
-    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
 }
 
 /* Hamburger Menu */
@@ -360,15 +347,9 @@ section h2 {
 @media (max-width: 768px) {
     #main-navigation-container {
         flex-direction: row; /* Keep h1 and hamburger on one line */
-        justify-content: space-between;
+        justify-content: flex-end; /* Align hamburger to the right */
         align-items: center;
         padding: 1rem;
-    }
-
-    .site-title {
-        font-size: 2rem;
-        width: auto;
-        margin-bottom: 0;
     }
 
     .hamburger-menu {
@@ -421,14 +402,9 @@ section h2 {
 
     #main-navigation-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end; /* Align nav to the right */
         align-items: center;
         padding: 1rem;
-    }
-
-    .site-title {
-        font-size: 3rem;
-        margin: 0;
     }
 
     #main-nav {
