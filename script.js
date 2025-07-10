@@ -62,17 +62,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function createRippleEffect() {
-        document.addEventListener('click', function(e) {
-            const ripple = document.createElement('div');
-            ripple.className = 'ripple';
-            document.body.appendChild(ripple);
+        // Use 'touchstart' for more immediate feedback on touch devices
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length > 0) {
+                const touch = e.touches[0];
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                document.body.appendChild(ripple);
 
-            ripple.style.left = `${e.clientX}px`;
-            ripple.style.top = `${e.clientY}px`;
+                ripple.style.left = `${touch.clientX}px`;
+                ripple.style.top = `${touch.clientY}px`;
 
-            ripple.addEventListener('animationend', () => {
-                ripple.remove();
-            });
+                ripple.addEventListener('animationend', () => {
+                    ripple.remove();
+                });
+            }
         });
     }
 
