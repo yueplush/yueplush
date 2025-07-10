@@ -212,6 +212,10 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    max-width: 300px; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px 5px 0 0; /* Rounded top corners */
     z-index: 1000; /* Ensure it stays on top of other content */
 }
 
