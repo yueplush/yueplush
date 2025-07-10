@@ -31,8 +31,9 @@ body {
     text-align: left;
 }
 
-/* Header */
-header {
+/* Desktop Header */
+#desktop-header {
+    /* Existing header styles */
     background: #222;
     color: #fff;
     padding: 0;
@@ -40,6 +41,27 @@ header {
     border-bottom: #00e5ff 3px solid;
     overflow: hidden;
     position: relative;
+}
+
+/* Mobile Menu Container */
+#mobile-menu-container {
+    display: none; /* Hidden by default on desktop */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu-container.active {
+    transform: translateX(0); /* Slide in */
 }
 
 .header-img {
@@ -388,54 +410,50 @@ section h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header-content {
-        position: relative; /* Change to relative for hamburger positioning */
-        flex-direction: row; /* Keep row for h1 and hamburger */
-        justify-content: space-between; /* Space between h1 and hamburger */
-        align-items: center;
-        padding: 1rem;
+    #desktop-header {
+        display: none; /* Hide desktop header on mobile */
     }
 
-    header h1 {
-        font-size: 2rem;
-        width: auto; /* Adjust width */
-        margin-bottom: 0; /* Remove margin */
+    #mobile-menu-container {
+        display: flex; /* Show mobile menu container on mobile */
     }
 
-    nav {
-        position: absolute;
-        top: 100%; /* Position below header */
-        left: 0;
+    .hamburger-menu {
+        display: block; /* Show hamburger on mobile */
+        position: fixed; /* Keep it fixed */
+        left: 1rem;
+        top: 1rem;
+        z-index: 1001;
+    }
+
+    #main-nav {
+        position: static; /* Reset position for mobile menu */
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.9); /* Darker background for menu */
-        flex-direction: column;
-        display: none; /* Hidden by default */
-        padding: 1rem 0;
-        border-top: 1px solid #00e5ff;
-    }
-
-    nav.active {
-        display: flex; /* Show when active */
+        height: auto;
+        background-color: transparent;
+        padding-top: 0;
+        display: flex; /* Always flex for mobile menu */
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
-    nav ul {
+    #main-nav ul {
         flex-direction: column;
-        gap: 10px;
-        padding: 0; /* Remove padding */
-        width: auto; /* Adjust width */
-        background-color: transparent; /* Remove background */
+        gap: 20px; /* Increase gap for better touch targets */
+        padding: 0;
+        width: 100%;
+        background-color: transparent;
     }
 
-    nav ul li {
+    #main-nav ul li {
         width: 100%;
         text-align: center;
     }
 
-    nav a {
-        display: block;
-        padding: 10px 0;
+    #main-nav a {
+        font-size: 1.5rem; /* Larger font size for mobile */
+        padding: 15px 0; /* Larger padding for better touch targets */
     }
 
     header p {
@@ -450,6 +468,41 @@ section h2 {
     .alias-button {
         width: 90%;
         max-width: 280px;
+    }
+}
+
+@media (min-width: 769px) {
+    #desktop-header {
+        display: block; /* Show desktop header on desktop */
+    }
+
+    #mobile-menu-container {
+        display: none; /* Hide mobile menu container on desktop */
+    }
+
+    .hamburger-menu {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    nav {
+        position: static; /* Reset position for desktop */
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding-top: 0;
+        display: block; /* Show nav on desktop */
+        margin-top: 20px; /* Restore original margin */
+    }
+
+    nav ul {
+        flex-direction: row; /* Restore row direction for desktop */
+        justify-content: center;
+        gap: 20px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem 1.5rem;
     }
 }
 

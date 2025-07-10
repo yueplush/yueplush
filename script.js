@@ -98,18 +98,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hamburger menu functionality
     const hamburgerMenu = document.getElementById('hamburger-menu');
-    const mainNav = document.getElementById('main-nav');
+    const mobileMenuContainer = document.getElementById('mobile-menu-container'); // Get the mobile menu container
 
-    if (hamburgerMenu && mainNav) {
+    if (hamburgerMenu && mobileMenuContainer) {
         hamburgerMenu.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
+            mobileMenuContainer.classList.toggle('active');
+            document.body.classList.toggle('menu-open'); // Add/remove class to body for scroll control
         });
 
         // Close menu when a nav link is clicked (for mobile)
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
+                if (mobileMenuContainer.classList.contains('active')) {
+                    mobileMenuContainer.classList.remove('active');
+                    document.body.classList.remove('menu-open'); // Re-enable body scroll
                 }
             });
         });
