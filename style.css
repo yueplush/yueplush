@@ -374,8 +374,29 @@ section h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header-content {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove transform */
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center align content */
+        padding: 1rem; /* Adjust padding */
+    }
+
     header h1 {
         font-size: 2rem;
+        width: 100%; /* Take full width */
+        margin-bottom: 10px; /* Add some space below h1 */
+    }
+
+    nav {
+        margin-top: 10px; /* Adjust margin for nav */
+        width: 100%; /* Take full width */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0.5rem; /* Adjust padding for ul */
     }
 
     header p {
@@ -390,11 +411,6 @@ section h2 {
     .alias-button {
         width: 90%;
         max-width: 280px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
     }
 }
 
