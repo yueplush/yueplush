@@ -16,46 +16,7 @@ body {
     animation: gradient-animation 15s ease infinite;
     color: #e0e0e0;
     min-height: 100vh;
-    /* cursor: none; will be set by JS */
 }
-
-/* Default cursor to none for non-touch devices */
-body.no-touch {
-    cursor: none;
-}
-
-.trail {
-    position: fixed;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #00e5ff;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: screen;
-    opacity: 1;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-/* Ripple effect for touch devices */
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(0, 229, 255, 0.7);
-    transform: scale(0);
-    animation: ripple-animation 0.6s ease-out;
-    pointer-events: none;
-    z-index: 9998;
-}
-
-@keyframes ripple-animation {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
 
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }
