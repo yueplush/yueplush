@@ -50,7 +50,13 @@ body {
     font-size: 1.8rem;
     cursor: pointer;
     color: #00e5ff;
+    position: fixed; /* Fixed position for mobile */
+    left: 1rem; /* Position to the left */
+    top: 1rem; /* Position to the top */
     z-index: 1001; /* Ensure it's above the nav menu */
+    background-color: rgba(0, 0, 0, 0.6); /* Add background for visibility */
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
 /* Navigation Menu */
@@ -360,12 +366,12 @@ section h2 {
     #main-nav {
         position: fixed; /* Fixed position for slide-in menu */
         top: 0;
-        left: -250px; /* Start off-screen to the left */
+        right: -250px; /* Start off-screen to the right */
         width: 250px; /* Width of the slide-in menu */
         height: 100%;
         background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
         padding-top: 60px; /* Space for hamburger button */
-        transition: left 0.3s ease-in-out; /* Smooth slide animation */
+        transition: right 0.3s ease-in-out; /* Smooth slide animation */
         z-index: 1000;
         flex-direction: column; /* Stack items vertically */
         justify-content: flex-start; /* Align items to the top */
@@ -373,7 +379,7 @@ section h2 {
     }
 
     #main-nav.active {
-        left: 0; /* Slide in when active */
+        right: 0; /* Slide in when active */
     }
 
     #main-nav ul {
