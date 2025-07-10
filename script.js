@@ -20,18 +20,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function switchPage(targetId) {
+        console.log('Attempting to switch to page:', targetId);
         const currentPage = document.querySelector('.page-section:not(.hidden)');
         const nextPage = document.getElementById(targetId);
 
+        if (currentPage) {
+            console.log('Current page:', currentPage.id);
+        } else {
+            console.log('No current page found (or all are hidden).');
+        }
+
+        if (nextPage) {
+            console.log('Next page:', nextPage.id);
+        } else {
+            console.log('Next page not found for targetId:', targetId);
+        }
+
         if (currentPage && nextPage && currentPage.id !== targetId) {
+            console.log('Switching page from', currentPage.id, 'to', nextPage.id);
             currentPage.classList.add('fade-out');
             currentPage.addEventListener('animationend', () => {
                 currentPage.classList.add('hidden');
                 currentPage.classList.remove('fade-out');
+                console.log('Current page', currentPage.id, 'is now hidden.');
 
                 nextPage.classList.remove('hidden');
                 nextPage.classList.add('fade-in');
+                console.log('Next page', nextPage.id, 'is now visible.');
             }, { once: true });
+        } else if (currentPage && nextPage && currentPage.id === targetId) {
+            console.log('Already on target page:', targetId);
+        } else {
+            console.log('Page switch condition not met. currentPage:', currentPage, 'nextPage:', nextPage, 'targetId:', targetId);
         }
     }
 
