@@ -33,11 +33,9 @@ body {
 
 /* Main Navigation Container */
 #main-navigation-container {
-    background: #222;
     color: #fff;
     padding: 1rem;
     text-align: center;
-    border-bottom: #00e5ff 3px solid;
     display: flex;
     justify-content: flex-end; /* Align items to the right */
     align-items: center;
