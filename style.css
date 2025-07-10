@@ -136,7 +136,7 @@ section h2 {
 }
 
 /* Profile, Aliases, Terms - Glassmorphism Effect */
-#profile, #aliases, #terms, #suggestive-artist-content {
+#profile, #aliases, #terms, #suggestive-artist-content, #virtual-nature-care, #sound-effect-lab, #jp-page {
     background: rgba(34, 34, 34, 0.65);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
