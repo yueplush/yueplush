@@ -21,17 +21,18 @@ body {
 
 .trail {
     position: fixed;
-    width: 10px;
-    height: 10px;
+    width: 12px; /* Slightly larger */
+    height: 12px; /* Slightly larger */
     border-radius: 50%;
     background: #00e5ff;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     mix-blend-mode: screen;
-    opacity: 0;
-    transition: opacity 0.2s ease-out;
+    opacity: 1;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Add transitions */
 }
+
 
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }

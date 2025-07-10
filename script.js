@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Cursor trail effect
-    const trailCount = 20;
+    const trailCount = 35; // Increased number of trail elements for a smoother effect
     const trails = [];
     for (let i = 0; i < trailCount; i++) {
         const trail = document.createElement('div');
@@ -24,10 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        const firstTrail = trails[0].element;
-        if (firstTrail) {
-            firstTrail.style.opacity = '1';
-        }
     });
     
     function animateTrails() {
@@ -37,17 +33,21 @@ document.addEventListener('DOMContentLoaded', function() {
         trails.forEach((trail, index) => {
             const { element } = trail;
             
+            // Spring-like motion
+            const speed = 0.3;
             const distanceX = prevX - trail.x;
             const distanceY = prevY - trail.y;
 
-            trail.x += distanceX * 0.2;
-            trail.y += distanceY * 0.2;
+            trail.x += distanceX * speed;
+            trail.y += distanceY * speed;
             
             element.style.left = `${trail.x}px`;
             element.style.top = `${trail.y}px`;
             
-            const scale = (trails.length - index) / trails.length;
-            element.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            // Opacity and scale decay
+            const decay = (trails.length - index) / trails.length;
+            element.style.opacity = decay * 0.8; // Adjust opacity for a softer look
+            element.style.transform = `translate(-50%, -50%) scale(${decay})`;
 
             prevX = trail.x;
             prevY = trail.y;
