@@ -64,7 +64,9 @@ header {
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
-    text-align: center;
+    display: flex; /* Add flex display */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Vertically align items */
 }
 
 header h1 {
