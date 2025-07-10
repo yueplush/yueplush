@@ -99,10 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu functionality
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const mainNav = document.getElementById('main-nav');
+    const body = document.body; // Get the body element
 
     if (hamburgerMenu && mainNav) {
         hamburgerMenu.addEventListener('click', function() {
             mainNav.classList.toggle('active');
+            body.classList.toggle('menu-open'); // Toggle body scroll
         });
 
         // Close menu when a nav link is clicked (for mobile)
@@ -110,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 if (mainNav.classList.contains('active')) {
                     mainNav.classList.remove('active');
+                    body.classList.remove('menu-open'); // Re-enable body scroll
                 }
             });
         });
