@@ -102,15 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (hamburgerMenu && mainNavigationContainer) {
         hamburgerMenu.addEventListener('click', function() {
-            mainNavigationContainer.classList.toggle('active');
+            mainNav.classList.toggle('active');
             document.body.classList.toggle('menu-open'); // Add/remove class to body for scroll control
         });
 
         // Close menu when a nav link is clicked (for mobile)
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                if (mainNavigationContainer.classList.contains('active')) {
-                    mainNavigationContainer.classList.remove('active');
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
                     document.body.classList.remove('menu-open'); // Re-enable body scroll
                 }
             });
