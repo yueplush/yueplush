@@ -31,73 +31,25 @@ body {
     text-align: left;
 }
 
-/* Desktop Header */
-#desktop-header {
-    /* Existing header styles */
+/* Main Navigation Container */
+#main-navigation-container {
     background: #222;
     color: #fff;
-    padding: 0;
+    padding: 1rem;
     text-align: center;
     border-bottom: #00e5ff 3px solid;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
-/* Mobile Menu Container */
-#mobile-menu-container {
-    display: none; /* Hidden by default on desktop */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
-    z-index: 999;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%); /* Start off-screen to the right */
-    transition: transform 0.3s ease-in-out;
-}
-
-#mobile-menu-container.active {
-    transform: translateX(0); /* Slide in */
-}
-
-.header-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    max-height: 250px;
-    opacity: 0.5;
-    transition: opacity 0.5s ease;
-}
-
-.header-img:hover {
-    opacity: 0.8;
-}
-
-.header-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    display: flex; /* Add flex display */
-    justify-content: space-between; /* Distribute space between items */
-    align-items: center; /* Vertically align items */
-}
-
-header h1 {
+.site-title {
     margin: 0;
     font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: slide-down 1s ease-out;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 0.5rem 1.5rem;
     display: inline-block;
@@ -107,34 +59,30 @@ header h1 {
 
 /* Hamburger Menu */
 .hamburger-menu {
-    display: none; /* Hidden by default on desktop */
+    display: none; /* Hidden by default, shown by media query */
     font-size: 1.8rem;
     cursor: pointer;
     color: #00e5ff;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1001; /* Ensure it's above the nav menu */
 }
 
 /* Navigation Menu */
-nav {
-    margin-top: 20px;
-    transition: all 0.3s ease-in-out;
+#main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow nav to take available space */
 }
 
-nav ul {
+#main-nav ul {
     list-style: none;
-    padding: 0.5rem 1.5rem;
+    padding: 0;
     margin: 0;
-    display: flex; /* Changed to flex */
-    justify-content: center;
+    display: flex;
     gap: 20px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
-    width: 100%; /* Ensure it takes full width */
-    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0.5rem 1.5rem;
 }
 
 nav a {
@@ -410,37 +358,46 @@ section h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    #desktop-header {
-        display: none; /* Hide desktop header on mobile */
+    #main-navigation-container {
+        flex-direction: row; /* Keep h1 and hamburger on one line */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
     }
 
-    #mobile-menu-container {
-        display: flex; /* Show mobile menu container on mobile */
+    .site-title {
+        font-size: 2rem;
+        width: auto;
+        margin-bottom: 0;
     }
 
     .hamburger-menu {
         display: block; /* Show hamburger on mobile */
-        position: fixed; /* Keep it fixed */
-        left: 1rem;
-        top: 1rem;
-        z-index: 1001;
+        position: static; /* Position relative to its parent */
     }
 
     #main-nav {
-        position: static; /* Reset position for mobile menu */
-        width: 100%;
-        height: auto;
-        background-color: transparent;
-        padding-top: 0;
-        display: flex; /* Always flex for mobile menu */
-        flex-direction: column;
+        position: fixed; /* Fixed position for slide-in menu */
+        top: 0;
+        left: -250px; /* Start off-screen to the left */
+        width: 250px; /* Width of the slide-in menu */
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+        padding-top: 60px; /* Space for hamburger button */
+        transition: left 0.3s ease-in-out; /* Smooth slide animation */
+        z-index: 1000;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align items to the top */
         align-items: center;
-        justify-content: center;
+    }
+
+    #main-nav.active {
+        left: 0; /* Slide in when active */
     }
 
     #main-nav ul {
         flex-direction: column;
-        gap: 20px; /* Increase gap for better touch targets */
+        gap: 20px;
         padding: 0;
         width: 100%;
         background-color: transparent;
@@ -452,49 +409,39 @@ section h2 {
     }
 
     #main-nav a {
-        font-size: 1.5rem; /* Larger font size for mobile */
-        padding: 15px 0; /* Larger padding for better touch targets */
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    .alias-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .alias-button {
-        width: 90%;
-        max-width: 280px;
+        font-size: 1.5rem;
+        padding: 15px 0;
     }
 }
 
 @media (min-width: 769px) {
-    #desktop-header {
-        display: block; /* Show desktop header on desktop */
-    }
-
-    #mobile-menu-container {
-        display: none; /* Hide mobile menu container on desktop */
-    }
-
     .hamburger-menu {
         display: none; /* Hide hamburger on desktop */
     }
 
-    nav {
+    #main-navigation-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .site-title {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    #main-nav {
         position: static; /* Reset position for desktop */
         width: auto;
         height: auto;
         background-color: transparent;
         padding-top: 0;
-        display: block; /* Show nav on desktop */
-        margin-top: 20px; /* Restore original margin */
+        display: flex; /* Show nav on desktop */
+        margin-top: 0; /* Remove margin */
     }
 
-    nav ul {
+    #main-nav ul {
         flex-direction: row; /* Restore row direction for desktop */
         justify-content: center;
         gap: 20px;
