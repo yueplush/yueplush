@@ -84,17 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageSections = document.querySelectorAll('.page-section');
 
     navLinks.forEach(link => {
-        // Exclude external links from navigation logic
-        if (link.hostname === window.location.hostname) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                switchPage(targetId);
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            switchPage(targetId);
 
-                navLinks.forEach(navLink => navLink.classList.remove('active-link'));
-                this.classList.add('active-link');
-            });
-        }
+            navLinks.forEach(navLink => navLink.classList.remove('active-link'));
+            this.classList.add('active-link');
+        });
     });
 
     function switchPage(targetId) {
