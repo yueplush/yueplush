@@ -50,11 +50,10 @@ body {
     font-size: 1.8rem;
     cursor: pointer;
     color: #00e5ff;
-    
+    position: fixed; /* Fixed position for mobile */
+    left: 1rem; /* Position to the left */
+    top: 1rem; /* Position to the top */
     z-index: 1001; /* Ensure it's above the nav menu */
-    background-color: rgba(0, 0, 0, 0.6); /* Add background for visibility */
-    padding: 0.5rem;
-    border-radius: 5px;
 }
 
 /* Navigation Menu */
