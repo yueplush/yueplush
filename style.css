@@ -387,11 +387,13 @@ section h2 {
     #main-nav ul li {
         width: 100%;
         text-align: center;
+        padding: 0 1rem; /* Add horizontal padding */
     }
 
     #main-nav a {
         font-size: 1.5rem;
         padding: 15px 0;
+        display: block; /* Make the link fill the available width */
     }
 }
 
