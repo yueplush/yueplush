@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('particles.js loaded - callback');
+    });
     const fadeInElements = document.querySelectorAll('.fade-in');
     const agreeCheckbox = document.getElementById('agree');
     const myArtPortfolioButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
