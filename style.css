@@ -116,7 +116,7 @@ nav a:hover, nav a.active-link {
 
 /* Main Content */
 main {
-    padding: 2rem 0;
+    padding: 2rem 0 4rem 0; /* Added padding-bottom to account for fixed footer */
 }
 
 section {
