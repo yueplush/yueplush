@@ -17,56 +17,72 @@
         <img src="header.jpg" alt="YuePlush Portal Header - Featuring creative tools and equipment" class="header-img">
         <div class="header-content">
             <h1>YuePlush Portal</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link active-link">Home</a></li>
+                    <li><a href="#art-portfolio" class="nav-link">My Art Portfolio</a></li>
+                    <li><a href="http://virtualnaturecare.carrd.co/" target="_blank" rel="noopener noreferrer" class="nav-link">Virtual Nature Care</a></li>
+                    <li><a href="https://soundeffectlabs.carrd.co/" target="_blank" rel="noopener noreferrer" class="nav-link">Sound Effect Lab</a></li>
+                    <li><a href="https://yueplushsignal.carrd.co/" target="_blank" rel="noopener noreferrer" class="nav-link">日本の方へ</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <section id="profile" class="fade-in">
-                <img src="profile.jpg?v=1" alt="YuePlush Profile Picture - A cute teddy bear with a Monster Energy drink" class="profile-img">
-                <h2>YuePlush</h2>
-                <p>Uplink Outlaw | Freelance Artist & Field Recordist<br>
-                Sound Designer • JP-EN Translator • DIY Tech Nomad</p>
-                <button id="toggle-profile">Show Profile</button>
-                <div id="profile-details" class="hidden">
-                    <p>call me Yue | ENG/JPN/bit RUS | they/them | Δθ | <br>
-                    Northeast Asia / Time Zone: UTC+9 / scorpio NOV/12<br><br>
-                    I create soft worlds, gather forgotten landscapes<br> and sounds, and wander playfully.<br>
-                    Sharing dreamy art and the calm of nature, <br>
-                    quietly from anywhere.<br>
-                    For busy hearts seeking a breath of softness and wonder.</p>
-                    <div class="mail-icon-container">
-                        <a href="mailto:yueplushart@tutamail.com"><span class="mail-emoji">📧</span></a>
-                    </div>
+            <div id="page-content">
+                <!-- Home Page -->
+                <div id="home" class="page-section">
+                    <section id="profile" class="fade-in">
+                        <img src="profile.jpg?v=1" alt="YuePlush Profile Picture - A cute teddy bear with a Monster Energy drink" class="profile-img">
+                        <h2>YuePlush</h2>
+                        <p>Uplink Outlaw | Freelance Artist & Field Recordist<br>
+                        Sound Designer • JP-EN Translator • DIY Tech Nomad</p>
+                        <button id="toggle-profile">Show Profile</button>
+                        <div id="profile-details" class="hidden">
+                            <p>call me Yue | ENG/JPN/bit RUS | they/them | Δθ | <br>
+                            Northeast Asia / Time Zone: UTC+9 / scorpio NOV/12<br><br>
+                            I create soft worlds, gather forgotten landscapes<br> and sounds, and wander playfully.<br>
+                            Sharing dreamy art and the calm of nature, <br>
+                            quietly from anywhere.<br>
+                            For busy hearts seeking a breath of softness and wonder.</p>
+                            <div class="mail-icon-container">
+                                <a href="mailto:yueplushart@tutamail.com"><span class="mail-emoji">📧</span></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="aliases" class="fade-in">
+                        <h2>My Aliases</h2>
+                        <div class="alias-buttons">
+                            <button class="alias-button" data-alias="suggestive-artist" disabled>My Art Portfolio</button>
+                            <button class="alias-button" data-alias="virtual-nature-care">Virtual Nature Care (ASMR)</button>
+                            <a href="https://soundeffectlabs.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Sound Effect Lab</a>
+                            <a href="https://yueplushsignal.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">日本の方へ</a>
+                        </div>
+                    </section>
                 </div>
-            </section>
 
-            <section id="aliases" class="fade-in">
-                <h2>My Aliases</h2>
-                <div class="alias-buttons">
-                    <button class="alias-button" data-alias="suggestive-artist" disabled>My Art Portfolio</button>
-                    <button class="alias-button" data-alias="virtual-nature-care">Virtual Nature Care (ASMR)</button>
-                    <a href="https://soundeffectlabs.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Sound Effect Lab</a>
-                    <a href="https://yueplushsignal.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">日本の方へ</a>
+                <!-- Art Portfolio Page -->
+                <div id="art-portfolio" class="page-section hidden">
+                    <section id="terms" class="fade-in">
+                        <h2>Terms of Service</h2>
+                        <div class="terms-content">
+                            <p class="small-text">About My Artwork Portfolio</p>
+                            <p>Before proceeding, please review the following terms of service. By agreeing, you confirm you are of legal age and understand that the 'My Art Portfolio' section contains suggestive and mature content. Viewer discretion is advised.</p>
+                            <div class="agreement-checkbox">
+                                <input type="checkbox" id="agree" />
+                                <label for="agree">I agree to the Terms of Service</label>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="suggestive-artist-content" class="fade-in hidden">
+                        <h2>My Art Portfolio</h2>
+                        <p>Thank you for agreeing to the terms. You can now access my art portfolio.</p>
+                         <a href="https://yueplushart.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Enter Portfolio</a>
+                    </section>
                 </div>
-            </section>
-
-            <section id="terms" class="fade-in">
-                <h2>Terms of Service</h2>
-                <div class="terms-content">
-                    <p class="small-text">About My Artwork Portfolio</p>
-                    <p>Before proceeding, please review the following terms of service. By agreeing, you confirm you are of legal age and understand that the 'My Art Portfolio' section contains suggestive and mature content. Viewer discretion is advised.</p>
-                    <div class="agreement-checkbox">
-                        <input type="checkbox" id="agree" />
-                        <label for="agree">I agree to the Terms of Service</label>
-                    </div>
-                </div>
-            </section>
-
-            <section id="suggestive-artist-content" class="fade-in hidden">
-                <h2>My Art Portfolio</h2>
-                <p>Thank you for agreeing to the terms. You can now access my art portfolio.</p>
-            </section>
+            </div>
         </div>
     </main>
 
