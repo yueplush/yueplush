@@ -18,6 +18,10 @@ body {
     min-height: 100vh;
 }
 
+body.menu-open {
+    overflow: hidden; /* Prevent body scrolling when menu is open */
+}
+
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -360,12 +364,13 @@ section h2 {
     #main-nav {
         position: fixed; /* Fixed position for slide-in menu */
         top: 0;
-        right: -250px; /* Start off-screen to the right */
+        right: 0; /* Position to the right edge */
+        transform: translateX(100%); /* Start off-screen to the right */
         width: 250px; /* Width of the slide-in menu */
         height: 100%;
         background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
         padding-top: 60px; /* Space for hamburger button */
-        transition: right 0.3s ease-in-out; /* Smooth slide animation */
+        transition: transform 0.3s ease-in-out; /* Smooth slide animation */
         z-index: 1000;
         flex-direction: column; /* Stack items vertically */
         justify-content: flex-start; /* Align items to the top */
@@ -373,7 +378,7 @@ section h2 {
     }
 
     #main-nav.active {
-        right: 0; /* Slide in when active */
+        transform: translateX(0); /* Slide in when active */
     }
 
     #main-nav ul {
