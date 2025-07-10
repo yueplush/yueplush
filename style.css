@@ -438,5 +438,5 @@ footer {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     text-align: center;
     max-height: 400px; /* Adjust as needed */
-    overflow-y: auto;
+    overflow-y: scroll;
 }
