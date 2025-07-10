@@ -39,8 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Existing code
     const fadeInElements = document.querySelectorAll('.fade-in');
     const agreeCheckbox = document.getElementById('agree');
-    const myArtPortfolioButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
-    const virtualNatureCareButton = document.querySelector('.alias-button[data-alias="virtual-nature-care"]');
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
