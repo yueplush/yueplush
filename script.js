@@ -1,7 +1,65 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Existing particles.js initialization
     particlesJS.load('particles-js', 'particles.json', function() {
         console.log('particles.js loaded - callback');
     });
+
+    // Cursor trail effect
+    const trailCount = 20;
+    const trails = [];
+    for (let i = 0; i < trailCount; i++) {
+        const trail = document.createElement('div');
+        trail.className = 'trail';
+        document.body.appendChild(trail);
+        trails.push({
+            element: trail,
+            x: -10,
+            y: -10
+        });
+    }
+
+    let mouseX = -10;
+    let mouseY = -10;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        const firstTrail = trails[0].element;
+        if (firstTrail) {
+            firstTrail.style.opacity = '1';
+        }
+    });
+    
+    function animateTrails() {
+        let prevX = mouseX;
+        let prevY = mouseY;
+
+        trails.forEach((trail, index) => {
+            const { element } = trail;
+            
+            const distanceX = prevX - trail.x;
+            const distanceY = prevY - trail.y;
+
+            trail.x += distanceX * 0.2;
+            trail.y += distanceY * 0.2;
+            
+            element.style.left = `${trail.x}px`;
+            element.style.top = `${trail.y}px`;
+            
+            const scale = (trails.length - index) / trails.length;
+            element.style.transform = `translate(-50%, -50%) scale(${scale})`;
+
+            prevX = trail.x;
+            prevY = trail.y;
+        });
+
+        requestAnimationFrame(animateTrails);
+    }
+
+    animateTrails();
+
+
+    // Existing code
     const fadeInElements = document.querySelectorAll('.fade-in');
     const agreeCheckbox = document.getElementById('agree');
     const myArtPortfolioButton = document.querySelector('.alias-button[data-alias="suggestive-artist"]');
