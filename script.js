@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hamburger menu functionality
     const hamburgerMenu = document.getElementById('hamburger-menu');
+    const mainNav = document.getElementById('main-nav'); // Define mainNav
     const mainNavigationContainer = document.getElementById('main-navigation-container'); // Get the main navigation container
 
     if (hamburgerMenu && mainNavigationContainer) {
