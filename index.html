@@ -7,35 +7,11 @@
     <title>YuePlush Portal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body id="top">
-    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;">
-        <filter id="chromatic-aberration-filter">
-            <feColorMatrix type="matrix" values="1 0 0 0 0
-                                            0 1 0 0 0
-                                            0 0 1 0 0
-                                            0 0 0 1 0" in="SourceGraphic" result="red"/>
-            <feColorMatrix type="matrix" values="1 0 0 0 0
-                                            0 1 0 0 0
-                                            0 0 1 0 0
-                                            0 0 0 1 0" in="SourceGraphic" result="green"/>
-            <feColorMatrix type="matrix" values="1 0 0 0 0
-                                            0 1 0 0 0
-                                            0 0 1 0 0
-                                            0 0 0 1 0" in="SourceGraphic" result="blue"/>
-            <feOffset in="red" dx="-2" dy="0" result="redOffset"/>
-            <feOffset in="blue" dx="2" dy="0" result="blueOffset"/>
-            <feBlend in="redOffset" in2="green" mode="screen" result="rbBlend"/>
-            <feBlend in="rbBlend" in2="blueOffset" mode="screen"/>
-        </filter>
-    </svg>
-    <div id="boot-screen">
-        <pre id="boot-text"></pre>
-    </div>
-    <div id="main-content" style="display: none;">
     <div id="particles-js"></div>
 
     <!-- Main Navigation Container -->
@@ -143,7 +119,6 @@
 
     
 
-    </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
