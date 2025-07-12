@@ -473,3 +473,14 @@ section h2 {
     overflow-y: scroll;
     padding-right: 15px; /* Add some padding for the scrollbar */
 }
+
+/* ブート画面 */
+#boot-screen {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    overflow: hidden;
+    padding: 1rem;
+    white-space: pre-wrap;
+}

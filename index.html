@@ -12,113 +12,115 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body id="top">
-    <div id="particles-js"></div>
-
-    <!-- Main Navigation Container -->
-    <div id="main-navigation-container">
-        <div class="hamburger-menu" id="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <nav id="main-nav">
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active-link">Home</a></li>
-                <li><a href="#art-portfolio" class="nav-link">Artist</a></li>
-                <li><a href="#virtual-nature-care" class="nav-link">Field Recordist</a></li>
-                <li><a href="#sound-effect-lab" class="nav-link">SFX Designer</a></li>
-                <li><a href="#jp-page" class="nav-link">日本の方へ</a></li>
-            </ul>
-        </nav>
+    <div id="boot-screen">
+        <pre id="boot-text"></pre>
     </div>
+    <div id="main-content" style="display: none;">
+        <div id="particles-js"></div>
 
-    <main>
-        <div class="container">
-            <div id="page-content">
-                <!-- Home Page -->
-                <div id="home" class="page-section">
-                    <section id="profile" class="fade-in">
-                        <img src="profile.jpg?v=1" alt="YuePlush Profile Picture - A cute teddy bear with a Monster Energy drink" class="profile-img">
-                        <h2>YuePlush</h2>
-                        <p>Uplink Outlaw | Freelance Artist & Field Recordist<br>
-                        Sound Designer • JP-EN Translator • DIY Tech Nomad</p>
-                        <button id="toggle-profile">Show Profile</button>
-                        <div id="profile-details" class="hidden">
-                            <p>call me Yue | ENG/JPN/bit RUS | they/them | Δθ | <br>
-                            Northeast Asia / Time Zone: UTC+9 / scorpio NOV/12<br><br>
-                            I create soft worlds, gather forgotten landscapes<br> and sounds, and wander playfully.<br>
-                            Sharing dreamy art and the calm of nature, <br>
-                            quietly from anywhere.<br>
-                            For busy hearts seeking a breath of softness and wonder.</p>
-                            <div class="mail-icon-container">
-                                <a href="mailto:yueplushart@tutamail.com"><span class="mail-emoji">📧</span></a>
+        <!-- Main Navigation Container -->
+        <div id="main-navigation-container">
+            <div class="hamburger-menu" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active-link">Home</a></li>
+                    <li><a href="#art-portfolio" class="nav-link">Artist</a></li>
+                    <li><a href="#virtual-nature-care" class="nav-link">Field Recordist</a></li>
+                    <li><a href="#sound-effect-lab" class="nav-link">SFX Designer</a></li>
+                    <li><a href="#jp-page" class="nav-link">日本の方へ</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <div class="container">
+                <div id="page-content">
+                    <!-- Home Page -->
+                    <div id="home" class="page-section">
+                        <section id="profile" class="fade-in">
+                            <img src="profile.jpg?v=1" alt="YuePlush Profile Picture - A cute teddy bear with a Monster Energy drink" class="profile-img">
+                            <h2>YuePlush</h2>
+                            <p>Uplink Outlaw | Freelance Artist & Field Recordist<br>
+                            Sound Designer • JP-EN Translator • DIY Tech Nomad</p>
+                            <button id="toggle-profile">Show Profile</button>
+                            <div id="profile-details" class="hidden">
+                                <p>call me Yue | ENG/JPN/bit RUS | they/them | Δθ | <br>
+                                Northeast Asia / Time Zone: UTC+9 / scorpio NOV/12<br><br>
+                                I create soft worlds, gather forgotten landscapes<br> and sounds, and wander playfully.<br>
+                                Sharing dreamy art and the calm of nature, <br>
+                                quietly from anywhere.<br>
+                                For busy hearts seeking a breath of softness and wonder.</p>
+                                <div class="mail-icon-container">
+                                    <a href="mailto:yueplushart@tutamail.com"><span class="mail-emoji">📧</span></a>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
+                        </section>
+                    </div>
 
-                <!-- Art Portfolio Page -->
-                <div id="art-portfolio" class="page-section hidden">
-                    <section id="terms" class="fade-in">
-                        <h2>Terms of Service</h2>
-                        <div class="terms-content">
-                            <p class="small-text">About My Artwork Portfolio</p>
-                            <p>Before proceeding, please review the following terms of service. By agreeing, you confirm you are of legal age and understand that the 'My Art Portfolio' section contains suggestive and mature content. Viewer discretion is advised.</p>
-                            <div class="agreement-checkbox">
-                                <input type="checkbox" id="agree" />
-                                <label for="agree">I agree to the Terms of Service</label>
+                    <!-- Art Portfolio Page -->
+                    <div id="art-portfolio" class="page-section hidden">
+                        <section id="terms" class="fade-in">
+                            <h2>Terms of Service</h2>
+                            <div class="terms-content">
+                                <p class="small-text">About My Artwork Portfolio</p>
+                                <p>Before proceeding, please review the following terms of service. By agreeing, you confirm you are of legal age and understand that the 'My Art Portfolio' section contains suggestive and mature content. Viewer discretion is advised.</p>
+                                <div class="agreement-checkbox">
+                                    <input type="checkbox" id="agree" />
+                                    <label for="agree">I agree to the Terms of Service</label>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                    <section id="suggestive-artist-content" class="fade-in hidden">
-                        <h2>My Art Portfolio</h2>
-                        <p>Thank you for agreeing to the terms. You can now access my art portfolio.</p>
-                        <div class="scrollable-content">
-                            
-                        </div>
-                         <a href="https://yueplushart.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Enter Portfolio</a>
-                    </section>
-                </div>
+                        </section>
+                        <section id="suggestive-artist-content" class="fade-in hidden">
+                            <h2>My Art Portfolio</h2>
+                            <p>Thank you for agreeing to the terms. You can now access my art portfolio.</p>
+                            <div class="scrollable-content">
+                                
+                            </div>
+                             <a href="https://yueplushart.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Enter Portfolio</a>
+                        </section>
+                    </div>
 
-                <!-- Virtual Nature Care -->
-                <div id="virtual-nature-care" class="page-section hidden">
-                    <section class="fade-in">
-                        <h2>Virtual Nature Care</h2>
-                        <div class="alias-buttons">
-                            <a href="http://virtualnaturecare.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Virtual Nature Care (ASMR)</a>
-                        </div>
-                        <p>Here you can find information about Virtual Nature Care. More content will be added soon.</p>
-                    </section>
-                </div>
+                    <!-- Virtual Nature Care -->
+                    <div id="virtual-nature-care" class="page-section hidden">
+                        <section class="fade-in">
+                            <h2>Virtual Nature Care</h2>
+                            <div class="alias-buttons">
+                                <a href="http://virtualnaturecare.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Virtual Nature Care (ASMR)</a>
+                            </div>
+                            <p>Here you can find information about Virtual Nature Care. More content will be added soon.</p>
+                        </section>
+                    </div>
 
-                <!-- Sound Effect Lab -->
-                <div id="sound-effect-lab" class="page-section hidden">
-                    <section class="fade-in">
-                        <h2>Sound Effect Lab</h2>
-                        <p style="text-align: center; font-size: 1.2rem; color: #00e5ff;"><i class="fas fa-tools"></i> Under Construction <i class="fas fa-tools"></i></p>
-                        <p style="text-align: center;">We are currently working on this section. Please check back later!</p>
-                        <div class="alias-buttons">
-                            <a href="https://soundeffectlabs.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Sound Effect Lab</a>
-                        </div>
-                    </section>
-                </div>
+                    <!-- Sound Effect Lab -->
+                    <div id="sound-effect-lab" class="page-section hidden">
+                        <section class="fade-in">
+                            <h2>Sound Effect Lab</h2>
+                            <p style="text-align: center; font-size: 1.2rem; color: #00e5ff;"><i class="fas fa-tools"></i> Under Construction <i class="fas fa-tools"></i></p>
+                            <p style="text-align: center;">We are currently working on this section. Please check back later!</p>
+                            <div class="alias-buttons">
+                                <a href="https://soundeffectlabs.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">Sound Effect Lab</a>
+                            </div>
+                        </section>
+                    </div>
 
-                <!-- JP Page -->
-                <div id="jp-page" class="page-section hidden">
-                    <section class="fade-in">
-                        <h2>日本の方へ</h2>
-                        <p style="text-align: center;">YuePlushのウェブサイトへようこそ！</p>
-                        <p style="text-align: center;">このページでは、日本の皆様へ向けた特別な情報や、日本語でのご案内を提供しています。</p>
-                        <p style="text-align: center;">最新情報やお問い合わせについては、以下のリンクからご確認ください。</p>
-                        <div class="alias-buttons">
-                            <a href="https://yueplushsignal.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">日本語サイトへ</a>
-                        </div>
-                    </section>
+                    <!-- JP Page -->
+                    <div id="jp-page" class="page-section hidden">
+                        <section class="fade-in">
+                            <h2>日本の方へ</h2>
+                            <p style="text-align: center;">YuePlushのウェブサイトへようこそ！</p>
+                            <p style="text-align: center;">このページでは、日本の皆様へ向けた特別な情報や、日本語でのご案内を提供しています。</p>
+                            <p style="text-align: center;">最新情報やお問い合わせについては、以下のリンクからご確認ください。</p>
+                            <div class="alias-buttons">
+                                <a href="https://yueplushsignal.carrd.co/" class="alias-button" target="_blank" rel="noopener noreferrer">日本語サイトへ</a>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-
-    
-
+        </main>
+    </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
