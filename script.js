@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 bootScreen.style.display = 'none';
                 mainContent.style.display = 'block';
+                mainContent.classList.add('main-fade-in'); // Add fade-in class
                 // Initialize other functionalities after the boot screen
                 initializePage();
             }, 1000);

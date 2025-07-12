@@ -478,9 +478,60 @@ section h2 {
 #boot-screen {
     background-color: #000;
     color: #0f0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
     height: 100vh;
     overflow: hidden;
     padding: 1rem;
     white-space: pre-wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 9999; /* Ensure it's on top */
+}
+
+#boot-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1) 1px, transparent 1px, transparent 2px);
+    animation: scanline 5s linear infinite;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+@keyframes scanline {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+}
+
+#boot-text {
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    animation: glitch 0.5s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* メインコンテンツのフェードイン */
+.main-fade-in {
+    opacity: 0;
+    animation: mainFadeIn 1s forwards;
+}
+
+@keyframes mainFadeIn {
+    to {
+        opacity: 1;
+    }
 }
