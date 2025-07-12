@@ -28,11 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(typeLine, Math.random() * 200 + 50);
         } else {
             setTimeout(() => {
-                bootScreen.style.display = 'none';
-                mainContent.style.display = 'block';
-                mainContent.classList.add('main-fade-in'); // Add fade-in class
-                // Initialize other functionalities after the boot screen
-                initializePage();
+                bootScreen.classList.add('boot-fade-out');
+                bootScreen.addEventListener('transitionend', () => {
+                    bootScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                    mainContent.classList.add('main-fade-in'); // Add fade-in class
+                    // Initialize other functionalities after the boot screen
+                    initializePage();
+                }, { once: true });
             }, 1000);
         }
     }

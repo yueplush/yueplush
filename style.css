@@ -526,3 +526,10 @@ section h2 {
         opacity: 1;
     }
 }
+
+/* ブート画面のフェードアウト */
+.boot-fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+    visibility: hidden;
+}
