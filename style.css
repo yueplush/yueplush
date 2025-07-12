@@ -484,8 +484,8 @@ section h2 {
     padding: 1rem;
     white-space: pre-wrap;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* Align to top-left */
+    align-items: flex-start; /* Align to top-left */
     flex-direction: column;
     position: relative;
     z-index: 9999; /* Ensure it's on top */
@@ -512,16 +512,7 @@ section h2 {
 #boot-text {
     font-size: 1.2em;
     text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
-    animation: glitch 0.5s infinite alternate;
-}
-
-@keyframes glitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
+    /* Removed glitch animation */
 }
 
 /* メインコンテンツのフェードイン */
