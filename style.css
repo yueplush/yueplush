@@ -473,6 +473,10 @@ section h2 {
     justify-content: center;
 }
 
+#virtual-nature-care .alias-buttons {
+    justify-content: center;
+}
+
 .scrollable-content {
     max-height: 400px; /* Adjust as needed */
     overflow-y: scroll;
