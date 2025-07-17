@@ -343,9 +343,7 @@ section h2 {
     transition: max-height 0.5s ease-out;
 }
 
-#profile-details.show {
-    max-height: 600px; /* Adjust as needed */
-}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -101,20 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleProfileButton = document.getElementById('toggle-profile');
     const profileDetails = document.getElementById('profile-details');
 
-    toggleProfileButton.addEventListener('click', function() {
-        const isHidden = profileDetails.classList.contains('hidden');
-        if (isHidden) {
-            profileDetails.classList.remove('hidden');
-            profileDetails.classList.add('show');
-            toggleProfileButton.textContent = 'Hide Profile';
-        } else {
-            profileDetails.classList.remove('show');
-            setTimeout(() => {
-                profileDetails.classList.add('hidden');
-            }, 500);
-            toggleProfileButton.textContent = 'Show Profile';
-        }
-    });
+    if (toggleProfileButton && profileDetails) {
+        toggleProfileButton.addEventListener('click', function() {
+            const isHidden = profileDetails.classList.contains('hidden');
+            if (isHidden) {
+                profileDetails.classList.remove('hidden');
+                profileDetails.style.maxHeight = profileDetails.scrollHeight + 'px';
+                toggleProfileButton.textContent = 'Hide Profile';
+            } else {
+                profileDetails.style.maxHeight = null;
+                setTimeout(() => {
+                    profileDetails.classList.add('hidden');
+                }, 500); // Match transition duration
+                toggleProfileButton.textContent = 'Show Profile';
+            }
+        });
+    }
 
     // Hamburger menu functionality
     const hamburgerMenu = document.getElementById('hamburger-menu');
