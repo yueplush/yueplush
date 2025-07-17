@@ -163,14 +163,13 @@ section h2 {
     margin-top: 20px;
 }
 
-.mail-emoji {
-    font-size: 3rem; /* Adjust size as needed */
-    line-height: 1;
-    display: inline-block;
+.mail-icon {
+    width: 48px;
+    height: 48px;
     transition: transform 0.3s ease;
 }
 
-.mail-icon-container:hover .mail-emoji {
+.mail-icon-container:hover .mail-icon {
     animation: pulse 1s infinite;
 }
 
@@ -345,7 +344,7 @@ section h2 {
 }
 
 #profile-details.show {
-    max-height: 500px; /* Adjust as needed */
+    max-height: 600px; /* Adjust as needed */
 }
 
 /* Responsive Design */
