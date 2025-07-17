@@ -465,6 +465,10 @@ section h2 {
     text-align: center;
 }
 
+#jp-page .alias-buttons {
+    justify-content: center;
+}
+
 .scrollable-content {
     max-height: 400px; /* Adjust as needed */
     overflow-y: scroll;
