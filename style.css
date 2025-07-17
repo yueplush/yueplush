@@ -469,6 +469,10 @@ section h2 {
     justify-content: center;
 }
 
+#sound-effect-lab .alias-buttons {
+    justify-content: center;
+}
+
 .scrollable-content {
     max-height: 400px; /* Adjust as needed */
     overflow-y: scroll;
